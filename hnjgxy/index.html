@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="viewport"
+              content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+        <link href="css/reset.css" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet">
+        <title>消防知识问答</title>
+        <style>
+
+        </style>
+    </head>
+    <body style="height: 100%;" class="L-index">
+        <img class="start-share" src="img/share1.png" onclick="share();">
+
+        <!--<div class="h-wisdom-index-pai">-->
+        <!--获取中...-->
+        <!--</div>-->
+        <div class="L-go-start">
+            <a class="h-wisdom-index-a">
+                <img class="start-btn" src="img/begin.png">
+            </a>
+            <a class="start-rule" id="start-rule" href="#" onclick="ruleShow()"><img  src="http://pic.pocketuni.net/data/sys_pic/question/index4.png"></a>
+        </div>
+
+
+        <!--rule-->
+        <div class="transparent" id="masking">
+            <div class="rule">
+                <i></i>
+                <p >一、出题规则： </p>
+                <p>题目类型：题目类型分为选择与判断。</p>
+                <p>总题库数：选择题20道单选</p>
+                <p>分值说明：单选每题4分，共80分，不分单双选；</p>
+                <p>答题时间：总答题时间为 10 分钟，单题答题时间不做规定</p>
+                <p >二、其他说明： </p>
+                <p>每所院校学生答完题目后，后台统一以学校为单位导出所有成绩。</p>
+            </div>
+        </div>
+    </body>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="js/share.js"></script>
+</html>
+<script>
+                $(".h-wisdom-index-a").click(function () {
+                    if (typeof (Android) == "undefined") {
+                        alert("请在PU中打开");
+                        return false;
+                    } else {
+                        window.location.href = 'question.html';
+                    }
+                });
+                var rule = document.getElementById("start-rule");
+                var mask = document.getElementById("masking");
+                rule.addEventListener("click", ruleShow);
+                mask.addEventListener("click", slideUp);
+                function ruleShow() {
+                    mask.style.display = "block";
+                }
+                function slideUp(e) {
+                    if (e.target.getAttribute("id") === "masking") {
+                        mask.style.display = "none";
+                    }
+                }
+                $(".rule > i").click(function () {
+                    $(".transparent").css({"display": "none"});
+                });
+                $(".h-wisdom-index-a").click(function () {
+
+                    $(".h-wisdom-index-a img").attr("src", "img/begindown.png");
+                });
+</script>

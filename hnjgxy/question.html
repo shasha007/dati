@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <link href="bower_components/bootstrap.min.css" rel="stylesheet">
+    <link href="css/reset.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <title>消防知识问答</title>
+</head>
+<body class="L-question">
+	<img class="start-share" src="img/share1.png" onclick="share();">
+<div class="modal fade" id="show" >
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                分享
+                <button type="button" class="close"
+                        data-dismiss="modal" aria-hidden="true">
+                    &times;
+                </button>
+            </div>
+            <div class="modal-body clearfix">
+                <a href="http://service.weibo.com/share/share.php?url=http://www.pocketuni.net/zhuanti/wisdom/&language=zh_cn&searchPic=true&pic=http://pic.pocketuni.net/data/sys_pic/wisdom/share_img.png&title=智慧之星排位赛&style=number" target="_blank"><img src="http://www.pocketuni.net/huo/img/LOGO.png"></a>
+                <a href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://www.pocketuni.net/zhuanti/wisdom/&title=智慧之星排位赛&site=口袋校园&summary=口袋校园&pics=http://pic.pocketuni.net/data/sys_pic/wisdom/share_img.png" title="分享到QQ空间" ><img style="margin-left: 10px;" src="https://ss0.baidu.com/6ONWsjip0QIZ8tyhnq/it/u=2293439163,77928339&fm=58" alt="" /></a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="question-c">
+<!--<header class="question-header">
+    <div class="question-time" id="timer">
+        600&emsp13;S
+    </div>
+</header>-->
+	<div class="question-num">
+		第<span class="question-number">XX</span>题
+	</div>
+	<div class="questin-sum">
+		共&nbsp;<span>20&nbsp;</span>题
+	</div>
+<article class="question-article">
+    <p class="question" data-question="">
+        <span class="question-no"> 问题载入中...</span>
+
+    <p class="question-p" data-answer="1">
+        <span class="question-a" >A.&emsp;</span>
+    <i id="answer-a">答案载入中...</i>
+    </p>
+    <p class="question-p" data-answer="2">
+        <span class="question-a">B.&emsp;</span>
+        <i id="answer-b">答案载入中...</i>
+    </p>
+    <p class="question-p" data-answer="3">
+        <span class="question-a">C.&emsp;</span>
+        <i id="answer-c">答案载入中...</i>
+    </p>
+    <p class="question-p" data-answer="4">
+        <span class="question-a">D.&emsp;</span>
+        <i id="answer-d">答案载入中...</i>
+    </p>
+
+</article>
+    <div class="L-time-show">答题时间还剩    <span class="question-time" id="timer">10&emsp13;分钟</span></div>
+</div>
+
+
+<div class="h-back-cover">
+</div>
+<div class="h-back-loading">
+</div>
+<!--<div class="h-back-timeover" >
+<img src="http://pic.pocketuni.net/data/sys_pic/question/timesOver.png">
+    <div>
+    <img src="http://pic.pocketuni.net/data/sys_pic/question/checkMyP.png" onclick="javascript:window.location.href='rank.html'">
+    <img src="http://pic.pocketuni.net/data/sys_pic/question/friend.png"  onclick="share();">
+    </div>
+</div>-->
+<div class="h-back-error">
+	<div class="L-error-come L-over-time">
+		<i onclick="javascript:window.location.href='index.html'"></i>
+	    <div class="L-score-see">
+	    	<p>桑不起</p>
+	    	<p>答题机会用完啦！</p>
+	    	<p class="L-back-rank" onclick="javascript:window.location.href='rank.html'">查看我的排名</p>
+	       <!--<img src="http://pic.pocketuni.net/data/sys_pic/question/again.png" onclick="javascript:window.location.href='question.html'">
+	        <img src="http://pic.pocketuni.net/data/sys_pic/question/checkpai.png" onclick="javascript:window.location.href='rank.html'">-->
+	    </div>
+	</div>
+</div>
+
+<div class="h-back-timeover">
+	<div class="L-error-come">
+		<i onclick="javascript:window.location.href='index.html'"></i>
+	    <div class="L-score-see">
+	    	<p>恭喜您</p>
+	    	<p>全部答完知识题</p>
+	    	<p class="L-back-rank" onclick="javascript:window.location.href='rank.html'">查看我的排名</p>
+	       <!--<img src="http://pic.pocketuni.net/data/sys_pic/question/again.png" onclick="javascript:window.location.href='question.html'">
+	        <img src="http://pic.pocketuni.net/data/sys_pic/question/checkpai.png" onclick="javascript:window.location.href='rank.html'">-->
+	    </div>
+    </div>
+    <!--<img src="http://pic.pocketuni.net/data/sys_pic/question/error.png">
+    <div>
+       <img src="http://pic.pocketuni.net/data/sys_pic/question/again.png" onclick="javascript:window.location.href='question.html'">
+        <img src="http://pic.pocketuni.net/data/sys_pic/question/checkpai.png" onclick="javascript:window.location.href='rank.html'">
+    </div>-->
+</div>
+</body>
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/bootstrap.min.js"></script>
+<script src="js/question.js"></script>
+<script src="js/share.js"></script>
+<script>
+		$(".L-error-come > i").click(function(){
+//			$(".L-over-time > i").css('background','url(img/closed.png)');
+    		$(".h-back-timeover").css({"display":"none"});
+//	        $('.h-back-timeover').css('opacity','0');
+	        $('.h-back-cover').css('opacity','0');
+	        $('.h-back-cover').hide();
+	        $('.h-back-timeover').hide();
+   });
+   		$(".L-over-time > i").click(function(){
+// 			$(".L-over-time > i").css('background','url(img/closed.png)')
+    		$(".h-back-error").css({"display":"none"});
+//	        $('.h-back-error').css('opacity','0');
+	        $('.h-back-cover').css('opacity','0');
+	        $('.h-back-cover').hide();
+	        $('.h-back-error').hide();
+   });
+   		$('.L-back-rank').click(function(){
+   			$(".L-back-rank").css('background','url(img/downButon.png)')
+   });
+</script>
+</html>
